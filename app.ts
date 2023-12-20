@@ -35,10 +35,11 @@ const createCourse = async (): Promise<void> => {
     });
 
     try {
+        
+        // .save automatically calls the .validate()
+        // await course.validate();
 
-        await course.validate();
-
-        // const result = await course.save();
+        const result = await course.save();
         // console.log('Course saved successfully:', result);
     } catch (error) {
         console.error('Error saving course:', error);
